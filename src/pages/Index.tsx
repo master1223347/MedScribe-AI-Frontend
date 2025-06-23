@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Upload, Camera, FileText, Globe, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Upload, Camera, FileText, Globe, ArrowLeft, CheckCircle, Sparkles, Zap } from 'lucide-react';
 import DocumentUpload from '@/components/DocumentUpload';
 import DocumentPreview from '@/components/DocumentPreview';
 import ProcessingScreen from '@/components/ProcessingScreen';
@@ -63,50 +63,94 @@ const Index = () => {
     switch (currentScreen) {
       case 'home':
         return (
-          <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
-            <div className="max-w-md w-full space-y-8">
+          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4 relative overflow-hidden">
+            {/* Animated background elements */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+              <div className="absolute top-40 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
+              <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-150"></div>
+            </div>
+            
+            <div className="max-w-md w-full space-y-8 relative z-10 animate-fade-in">
               <div className="text-center">
-                <div className="mx-auto h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <FileText className="h-8 w-8 text-blue-600" />
+                <div className="mx-auto h-20 w-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-6 shadow-lg transform hover:scale-110 transition-all duration-300 animate-pulse">
+                  <FileText className="h-10 w-10 text-white" />
                 </div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">MedTranslate</h1>
-                <p className="text-gray-600">Upload medical documents and get simple explanations in your language</p>
+                <div className="flex items-center justify-center mb-4">
+                  <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                    MedTranslate
+                  </h1>
+                  <Sparkles className="h-6 w-6 text-purple-500 ml-2 animate-pulse" />
+                </div>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Transform complex medical documents into simple explanations in your language using advanced AI technology
+                </p>
               </div>
               
-              <div className="space-y-4">
-                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2 border-dashed border-blue-200 hover:border-blue-400" 
+              <div className="space-y-6">
+                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-dashed border-blue-200 hover:border-blue-400 transform hover:scale-105 hover:-translate-y-1 bg-gradient-to-br from-blue-50 to-indigo-50" 
                       onClick={() => setCurrentScreen('upload')}>
                   <div className="flex items-center space-x-4">
-                    <div className="bg-blue-100 p-3 rounded-full">
-                      <Upload className="h-6 w-6 text-blue-600" />
+                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-full shadow-lg">
+                      <Upload className="h-7 w-7 text-white" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">Upload Document</h3>
-                      <p className="text-sm text-gray-600">Choose from your device gallery</p>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-900 text-lg mb-1">Upload Document</h3>
+                      <p className="text-sm text-gray-600">Choose from your device gallery or drag & drop</p>
+                      <div className="flex items-center mt-2">
+                        <Zap className="h-4 w-4 text-yellow-500 mr-1" />
+                        <span className="text-xs text-yellow-600 font-medium">Instant processing</span>
+                      </div>
                     </div>
                   </div>
                 </Card>
                 
-                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2 border-dashed border-green-200 hover:border-green-400" 
+                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-dashed border-green-200 hover:border-green-400 transform hover:scale-105 hover:-translate-y-1 bg-gradient-to-br from-green-50 to-emerald-50" 
                       onClick={() => setCurrentScreen('upload')}>
                   <div className="flex items-center space-x-4">
-                    <div className="bg-green-100 p-3 rounded-full">
-                      <Camera className="h-6 w-6 text-green-600" />
+                    <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-full shadow-lg">
+                      <Camera className="h-7 w-7 text-white" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">Take Photo</h3>
-                      <p className="text-sm text-gray-600">Use your camera directly</p>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-900 text-lg mb-1">Take Photo</h3>
+                      <p className="text-sm text-gray-600">Use your camera to capture documents directly</p>
+                      <div className="flex items-center mt-2">
+                        <Zap className="h-4 w-4 text-yellow-500 mr-1" />
+                        <span className="text-xs text-yellow-600 font-medium">Real-time capture</span>
+                      </div>
                     </div>
                   </div>
                 </Card>
               </div>
               
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5" />
-                  <div className="text-sm text-blue-800">
-                    <p className="font-medium">Privacy Protected</p>
-                    <p>Your documents are processed securely and not stored permanently.</p>
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100 shadow-inner">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-full">
+                    <CheckCircle className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-bold text-blue-800 mb-2 text-lg">🔒 Privacy Protected & Secure</p>
+                    <p className="text-sm text-blue-700 leading-relaxed">
+                      Your documents are processed securely with end-to-end encryption and are never stored permanently. 
+                      We use advanced AI to ensure your medical information stays private and confidential.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span>AI-Powered</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse delay-75"></div>
+                    <span>50+ Languages</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse delay-150"></div>
+                    <span>Instant Results</span>
                   </div>
                 </div>
               </div>
