@@ -1,4 +1,3 @@
-
 import { useState, useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -54,11 +53,18 @@ const DocumentUpload = ({ onImageUpload, onBack }: DocumentUploadProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
+    <div className="min-h-screen bg-gradient-to-br from-rose-100 via-purple-50 via-cyan-50 to-teal-100 p-4 relative overflow-hidden">
+      {/* Enhanced animated background */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-r from-rose-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-150"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-300"></div>
+        
+        {/* Moving elements */}
+        <div className="absolute top-40 left-1/3 w-6 h-6 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute bottom-40 right-1/3 w-4 h-4 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full animate-bounce delay-1500"></div>
+        <div className="absolute top-1/2 left-20 w-5 h-5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full animate-bounce delay-2000"></div>
       </div>
 
       <div className="max-w-2xl mx-auto relative z-10">

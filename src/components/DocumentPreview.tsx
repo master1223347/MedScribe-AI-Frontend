@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, RotateCcw, Check, Sparkles, Zap, Brain, FileText } from 'lucide-react';
@@ -12,11 +11,19 @@ interface DocumentPreviewProps {
 
 const DocumentPreview = ({ imageUrl, onConfirm, onBack, onReupload }: DocumentPreviewProps) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 via-pink-50 to-rose-100 p-4 relative overflow-hidden">
+      {/* Enhanced animated background */}
+      <div className="absolute inset-0 opacity-12">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
+        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-150"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-300"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-32 right-1/4 w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute bottom-32 left-1/4 w-5 h-5 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full animate-bounce delay-1500"></div>
+        <div className="absolute top-2/3 right-20 w-4 h-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-bounce delay-2000"></div>
+        <div className="absolute top-1/4 left-1/2 w-6 h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full animate-bounce delay-2500"></div>
       </div>
 
       <div className="max-w-3xl mx-auto relative z-10">
@@ -42,7 +49,7 @@ const DocumentPreview = ({ imageUrl, onConfirm, onBack, onReupload }: DocumentPr
               <Sparkles className="h-6 w-6 text-purple-600 ml-2 animate-pulse" />
             </div>
             <p className="text-gray-600 text-lg">
-              Make sure the text is clear and readable before our AI processes it
+              Make sure the text is clear an readable before our AI processes it
             </p>
           </div>
           

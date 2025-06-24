@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -63,12 +62,20 @@ const Index = () => {
     switch (currentScreen) {
       case 'home':
         return (
-          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4 relative overflow-hidden">
-            {/* Animated background elements */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-              <div className="absolute top-40 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
-              <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-150"></div>
+          <div className="min-h-screen bg-gradient-to-br from-violet-100 via-sky-50 via-emerald-50 to-amber-100 flex items-center justify-center p-4 relative overflow-hidden">
+            {/* Enhanced animated background elements */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+              <div className="absolute top-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
+              <div className="absolute bottom-10 left-20 w-72 h-72 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-150"></div>
+              <div className="absolute bottom-20 right-40 w-64 h-64 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-300"></div>
+              <div className="absolute top-1/2 left-1/2 w-88 h-88 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500 transform -translate-x-1/2 -translate-y-1/2"></div>
+              
+              {/* Floating elements */}
+              <div className="absolute top-32 left-1/4 w-4 h-4 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full animate-bounce delay-1000"></div>
+              <div className="absolute bottom-32 right-1/4 w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-bounce delay-1500"></div>
+              <div className="absolute top-1/2 right-20 w-3 h-3 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full animate-bounce delay-2000"></div>
+              <div className="absolute bottom-40 left-1/3 w-5 h-5 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full animate-bounce delay-2500"></div>
             </div>
             
             <div className="max-w-md w-full space-y-8 relative z-10 animate-fade-in">

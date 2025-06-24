@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, FileText, Globe, RotateCcw } from 'lucide-react';
@@ -24,8 +23,22 @@ const TranslatedSummary = ({ simplifiedText, translatedText, language, onBack, o
   const currentLanguage = languageNames[language as keyof typeof languageNames] || { name: 'Unknown', flag: '🌐' };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white p-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-blue-50 via-purple-50 to-pink-100 p-4 relative overflow-hidden">
+      {/* Enhanced animated background */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute top-20 left-20 w-88 h-88 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-75"></div>
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-150"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-300"></div>
+        
+        {/* Floating success indicators */}
+        <div className="absolute top-40 left-1/3 w-6 h-6 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute bottom-40 right-1/3 w-4 h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-bounce delay-1500"></div>
+        <div className="absolute top-1/2 left-20 w-5 h-5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full animate-bounce delay-2000"></div>
+        <div className="absolute bottom-1/4 right-20 w-3 h-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full animate-bounce delay-2500"></div>
+      </div>
+      
+      <div className="max-w-4xl mx-auto relative z-10">
         <div className="flex items-center mb-6">
           <Button variant="ghost" onClick={onBack} className="mr-4">
             <ArrowLeft className="h-4 w-4" />
